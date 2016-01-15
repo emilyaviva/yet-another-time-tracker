@@ -1,17 +1,44 @@
 html {
   font-family: "Arimo", sans-serif; }
 
-body {
+header, main {
   margin: 20px; }
 
 table {
-  border: 1px solid #aaa; }
+  border: 2px solid #aaa; }
+  table thead {
+    background-color: #eee;
+    font-weight: bold; }
+  table tr {
+    border-bottom: 1px solid #ccc; }
   table td {
+    padding: 4px;
     width: 150px; }
 
 section {
   margin-bottom: 30px; }
 
-footer ul li {
-  list-style: none;
-  display: inline; }
+footer {
+  position: fixed;
+  border-top: 1px solid #aaa;
+  height: 30;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: #eee; }
+  footer a {
+    text-decoration: none;
+    color: #00e; }
+  footer article {
+    display: inline-flex;
+    margin: 0 auto; }
+  footer p {
+    margin: 0 auto;
+    display: inline-flex;
+    vertical-align: middle;
+    justify-content: space-between; }
+    footer p img {
+      height: 26px;
+      width: 26px; }
+
+/*# sourceMappingURL=local.css.map */
