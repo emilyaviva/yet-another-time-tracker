@@ -43,11 +43,30 @@ $('#input-form').on('submit', function(event) {
   }
 });
 
-if (totalLog.length) {
-  totalLog.forEach(function(session) {
-    renderSession(session);
-  });
+function renderLog(data) {
+  if (typeof data === 'string') data = JSON.parse(data);
+  if (data.length) {
+    data.forEach(function(session) {
+      renderSession(session);
+    });
+    $('#export')
+      .attr('href', 'data:text/json;charset=utf-8,' + encodeURIComponent(localStorage.totalLog))
+      .attr('download', 'timelog.json');
+  }
 }
+
+$('#file-import').on('change', function(event) {
+  var file = event.target.files[0];
+  if (file.type.match(/json.*/)) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      renderLog(reader.result);
+    };
+    reader.readAsText(file);
+  } else {
+    alert('File not supported.');
+  }
+});
 
 if (localStorage.currentSession) {
   var currentSession = moment(JSON.parse(localStorage.getItem('currentSession')));
@@ -59,3 +78,5 @@ if (localStorage.currentSession) {
   $('#input-memo').hide();
   $('#input-punch').val('Punch In');
 }
+
+renderLog(totalLog);

@@ -18,6 +18,9 @@ table {
 section {
   margin-bottom: 30px; }
 
+#persistence a {
+  display: block; }
+
 footer {
   position: fixed;
   border-top: 1px solid #aaa;
