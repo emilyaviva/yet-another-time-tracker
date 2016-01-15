@@ -23,23 +23,27 @@ footer
   position: fixed
   border:
     top: 1px solid #aaa
-  height: 30
-  width: 100%
+  padding: 0.3em 0
   left: 0
   bottom: 0
+  height: 30
+  width: 100%
   background: #eee
   a
     text:
       decoration: none
     color: #00e
-  article
-    display: inline-flex
+  ul
     margin: 0 auto
-  p
-    margin: 0 auto
-    display: inline-flex
+    display: flex
+    align-items: baseline
+    justify-content: space-around
+    li
+      vertical-align: top
+      list-style-type: none
+  img
+    height: 26px
+    width: 26px
     vertical-align: middle
-    justify-content: space-between
-    img
-      height: 26px
-      width: 26px
+  .icon
+    margin-right: 6px
